@@ -1,11 +1,14 @@
 const mongoose = require("mongoose");
 
+/**
+ * This model is assumed after listing all records in the collection.
+ */
 let specialities = new mongoose.Schema(
     {
         name: { type: String }
     },
     {
-        timestamps: true,
+        timestamps: true, //This add createdAt and updatedAt fields
     }
 );
 

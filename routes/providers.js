@@ -6,7 +6,8 @@ const providersModel = require("./../models/providersModel");
 /**
  * GET method, get all providersModel
  * 
- * Returns all saved providersModel
+ * Returns all saved providersModel.
+ * this route was used to list everything that was in the collection and thus know the model.
  */
 router.get('/all', (req, res) => {
   providersModel.find().exec((errProvider, resProvider) => {
@@ -42,7 +43,7 @@ router.get('/:id', (req, res) => {
 /**
  * DELETE method.
  * 
- * To delete a saved provider.
+ * To delete a saved provider through its id.
  */
 router.delete("/:id", (req, res) => {
   const id = req.params.id;
@@ -63,7 +64,7 @@ router.delete("/:id", (req, res) => {
 
 /**
  * PUT method. 
- * To update a save provider.
+ * To update a save provider through its id.
  * 
  * Body example:
  * 

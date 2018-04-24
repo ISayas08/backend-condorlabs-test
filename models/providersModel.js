@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 
+/**
+ * This model is assumed after listing all records in the collection.
+ */
 let provider = new mongoose.Schema(
     {
         firstName: { type: String },
@@ -18,7 +21,7 @@ let provider = new mongoose.Schema(
         }
     },
     {
-        timestamps: true,
+        timestamps: true, //This add createdAt and updatedAt fields
     }
 );
 

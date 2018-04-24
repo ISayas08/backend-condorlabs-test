@@ -1,6 +1,8 @@
+// Basic imports
 var express = require('express');
 var router = express.Router();
 
+// Getting the model for this route.
 const specialities = require("./../models/specialitiesModel");
 
 /**

@@ -3,9 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
+// Allows to have the environment variables in the .env file.
 require("dotenv").config();
+
+// The connection with mongodb is created through the ./connect.js file
 var mongoosec = require("./connect");
 
+//Load all routes.
 var indexRouter = require('./routes/index');
 var providersRouter = require('./routes/providers');
 var specialitiesRouter = require('./routes/specialities');
@@ -22,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// The endpoints are assigned for each route.
 app.use('/', indexRouter);
 app.use('/providers', providersRouter);
 app.use('/specialities', specialitiesRouter);
